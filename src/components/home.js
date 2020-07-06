@@ -13,6 +13,7 @@ export default class Home extends Component {
           <Logo />
           <SearchBar />
           <RecentPosts />
+         
 
         </div>
       </div>
