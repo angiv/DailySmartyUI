@@ -31,6 +31,13 @@ $color-gray-two: #B3B3B3;
 $color-gray-three: #D8D8D8;
 $color-blue-one: #0079FF;
 
+
+.no-content {
+    color: $color-gray-one;
+    font-size: 14px;
+    line-height: 17px;
+}
+
 /*
 .recent-post {
     .recent-post__title a {
