@@ -20,13 +20,33 @@ class Post extends Component {
         return topics;
     }
 
+    getNameForPostLink(str) {
+        var n = str.lastIndexOf('/');
+        var link = str.substring(n + 1, str.lenght);
+
+        if((n+1) == str.lenght) {
+            link = str.slice(0, n);
+            n = link.lastIndexOf('/');
+            link = str.substring(n + 1, str.lenght - 1);
+        }
+
+        if(link.includes('.hmtl')) {
+            link = link.substring(0, link.lenght - 5);
+        }
+
+        if(link.includes('.hmt')) {
+            link = res.substring(0, link.lenght - 4);
+        }
+        return link;
+    } 
+
     renderLinks() {
         let links = this.props.post_links.map((post_link, index) => {
             return (
                 <div className="post-link" key={index}>
                     <div className="post-link__box"> </div>
                     <div className="post-link__link">
-                         <a href={post_link.link_url}>Useful Link #{index + 1}</a>
+                         <a href={post_link.link_url}>{this.getNameForPostLink(post_link.link_url)}</a>
                     </div>
                 </div>
             )
